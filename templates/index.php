@@ -13,8 +13,11 @@
 
     <!--Retreive books from database.-->
     <?php 
+
+        //Database connection.
         include('../config/db_connect.php');
-         //Query to fetch all books.
+        
+        //Query to fetch all books.
          $sql = "SELECT * FROM books ORDER BY title";
  
          //Make query and get result.
@@ -66,7 +69,8 @@
     </table>
 
     <div class="d-flex justify-content-center">
-    <a href="addbook.php"><button type="button" class="btn btn-dark">Add Book</button></a>
+    <a href="removebook.php"><button type="button" class="btn btn-dark">Remove Book</button></a>
+    <a href="addbook.php"><button type="button" class="ml-2 btn btn-dark">Add Book</button></a>
     </div>
 
         
