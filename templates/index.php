@@ -34,7 +34,7 @@
 
     ?>
 
-    <h1 class="display-3 text-center">Main Dashboard</h1>
+    <h1 class="display-3 text-center">Book Inventory</h1>
 
     <!--Table Header-->
     <table class="table table-bordered table-dark">

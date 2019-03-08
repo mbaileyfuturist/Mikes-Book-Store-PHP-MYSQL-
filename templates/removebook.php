@@ -35,9 +35,6 @@
  
             //Close Connection.
             mysqli_close($conn);
-
-            //Print book attributes.
-            print_r($book); 
         }
     ?>
 
@@ -54,6 +51,48 @@
                 <a href="index.php"><button type="button" name="cancel-btn" class="ml-2 btn btn-dark">cancel</button></a>
             </div>
         </form>
+
+        <?php 
+            if(isset($_POST['submit'])){  
+                echo "<div class=\"container mt-5\">";
+                echo    "<div class=\"row\">";
+                echo        "<div class=\"col-lg-4\">";
+                echo            "<h4 class=\"text-white\">Title: {$book['Title']}</h4>";
+                echo        "</div>";
+                echo        "<div class=\"col-lg-4\">";
+                echo            "<h4 class=\" text-white ml-5\">Author: {$book['Author']}</h4>";        
+                echo        "</div>";
+                echo    "</div>";
+
+                echo    "<div class=\"row mt-5\">";
+                echo        "<div class=\"col-lg-4\">";
+                echo            "<h4 class=\"text-white\">Publisher: {$book['Publisher']}</h4>";
+                echo        "</div>";
+                echo        "<div class=\"col-lg-4\">";
+                echo            "<h4 class=\" text-white ml-5\">Wholesale: {$book['Wholesale']}</h4>";        
+                echo        "</div>";
+                echo    "</div>";
+
+                echo    "<div class=\"row mt-5\">";
+                echo        "<div class=\"col-lg-4\">";
+                echo            "<h4 class=\"text-white\">Retail: {$book['Retail']}</h4>";
+                echo        "</div>";
+                echo        "<div class=\"col-lg-4\">";
+                echo            "<h4 class=\" text-white ml-5\">Quantity: {$book['Quantity']}</h4>";        
+                echo        "</div>";
+                echo    "</div>";
+                
+                echo    "<form class=\"form-inline mt-5\">";
+                echo      "<div class=\"form-group mb-2\">";
+                echo         "<label class=\"text-white h4\">Quantity to remove: </label>";
+                echo         "<input type=\"text\" class=\"form-control ml-4\" id=\"inputQuantity\" placeholder=\"0\">";
+                echo     "</div>";
+                echo        "<button type=\"submit\" class=\"btn btn-dark mb-2 ml-4\">Remove Books</button>";
+                echo        "</form>";
+                echo "</div>";
+            }
+            
+        ?>
  
     <!--Scripts for Bootstrap.-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
