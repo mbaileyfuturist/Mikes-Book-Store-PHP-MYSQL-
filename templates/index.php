@@ -71,9 +71,10 @@ include('../config/db_connect.php');
                 <th scope="col">Title</th>
                 <th scope="col">Author</th>
                 <th scope="col">Publisher</th>
+                <th scope="col">Genre</th>
+                <th scope="col">ISBN</th>
                 <th scope="col">Wholesale</th>
                 <th scope="col">Retail</th>
-                <th scope="col">Quantity</th>
                 </tr>
             </thead>
             <tbody>
@@ -81,12 +82,13 @@ include('../config/db_connect.php');
             <!--Retrieve data from database and display into a table.-->
             <?php foreach($books as $book){ ?>
                 <tr class="text-center">
-                    <td><?php echo htmlspecialchars($book['Title']); ?></td>
-                    <td><?php echo htmlspecialchars($book['Author']); ?></td>
-                    <td><?php echo htmlspecialchars($book['Publisher']); ?></td>
-                    <td><?php echo htmlspecialchars($book['Wholesale']); ?></td>
-                    <td><?php echo htmlspecialchars($book['Retail']); ?></td>
-                    <td><?php echo htmlspecialchars($book['Quantity']); ?></td>
+                    <td><?php echo htmlspecialchars($book['title']); ?></td>
+                    <td><?php echo htmlspecialchars($book['author']); ?></td>
+                    <td><?php echo htmlspecialchars($book['publisher']); ?></td>
+                    <td><?php echo htmlspecialchars($book['genre']); ?></td>
+                    <td><?php echo htmlspecialchars($book['isbn']); ?></td>
+                    <td><?php echo htmlspecialchars($book['wholesale']); ?></td>
+                    <td><?php echo htmlspecialchars($book['retail']); ?></td>
                 </tr>
             <?php } ?>
                 

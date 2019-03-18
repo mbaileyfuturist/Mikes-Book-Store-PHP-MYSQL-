@@ -1,10 +1,9 @@
 <?php 
-    //Database connection.
-    include('../config/db_connect.php');
-
         //If form has been submitted.
         if(isset($_POST['submit'])){  
             
+            //Establish connection to database.
+            include('../config/db_connect.php');
 
             $bookTitle = mysqli_real_escape_string($conn, $_POST['title']);
 
@@ -23,6 +22,7 @@
             //Close Connection.
             mysqli_close($conn);
         }
+
 ?>
 <!DOCTYPE <!DOCTYPE html>
 <html>
@@ -63,7 +63,7 @@
         <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
         </form>
         </nav>
-        
+
         <form action="removebook.php" method="POST">
             <div class="d-flex justify-content-center form-row">
                 <div class="form-group col-md-6 mt-5">
@@ -81,35 +81,34 @@
                 echo "<div class=\"container mt-5\">";
                 echo    "<div class=\"row\">";
                 echo        "<div class=\"col-lg-4\">";
-                echo            "<h4 class=\"text-white\">Title: {$book['Title']}</h4>";
+                echo            "<h4 class=\"text-white\">Title: {$book['title']}</h4>";
                 echo        "</div>";
                 echo        "<div class=\"col-lg-4\">";
-                echo            "<h4 class=\" text-white ml-5\">Author: {$book['Author']}</h4>";        
-                echo        "</div>";
-                echo    "</div>";
-
-                echo    "<div class=\"row mt-5\">";
-                echo        "<div class=\"col-lg-4\">";
-                echo            "<h4 class=\"text-white\">Publisher: {$book['Publisher']}</h4>";
-                echo        "</div>";
-                echo        "<div class=\"col-lg-4\">";
-                echo            "<h4 class=\" text-white ml-5\">Wholesale: {$book['Wholesale']}</h4>";        
+                echo            "<h4 class=\" text-white ml-5\">Author: {$book['author']}</h4>";        
                 echo        "</div>";
                 echo    "</div>";
 
                 echo    "<div class=\"row mt-5\">";
                 echo        "<div class=\"col-lg-4\">";
-                echo            "<h4 class=\"text-white\">Retail: {$book['Retail']}</h4>";
+                echo            "<h4 class=\"text-white\">Publisher: {$book['publisher']}</h4>";
                 echo        "</div>";
                 echo        "<div class=\"col-lg-4\">";
-                echo            "<h4 class=\" text-white ml-5\">Quantity: {$book['Quantity']}</h4>";        
+                echo            "<h4 class=\" text-white ml-5\">Genre: {$book['genre']}</h4>";        
+                echo        "</div>";
+                echo    "</div>";
+
+                echo    "<div class=\"row mt-5\">";
+                echo        "<div class=\"col-lg-4\">";
+                echo            "<h4 class=\"text-white\">Wholesale: {$book['wholesale']}</h4>";
+                echo        "</div>";
+                echo        "<div class=\"col-lg-4\">";
+                echo            "<h4 class=\" text-white ml-5\">Retail: {$book['retail']}</h4>";        
                 echo        "</div>";
                 echo    "</div>";
                 
-                echo    "<form class=\"form-inline mt-5\">";
+                echo    "<form class=\"form-inline mt-5\" action=\"removebook.php\" method=\"GET\">";
                 echo      "<div class=\"form-group mb-2\">";
-                echo         "<label class=\"text-white h4\">Quantity to remove: </label>";
-                echo         "<input type=\"text\" class=\"form-control ml-4\" id=\"inputQuantity\" placeholder=\"0\">";
+                echo         "<label class=\"text-white h4\">Are you sure wish to remove this book? </label>";
                 echo     "</div>";
                 echo        "<button type=\"submit\" class=\"btn btn-dark mb-2 ml-4\">Remove Books</button>";
                 echo        "</form>";

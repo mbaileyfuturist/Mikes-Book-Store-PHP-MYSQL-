@@ -9,9 +9,10 @@
             $bookTitle = mysqli_real_escape_string($conn, $_POST['title']);
             $bookAuthor = mysqli_real_escape_string($conn, $_POST['author']);
             $bookPublisher = mysqli_real_escape_string($conn, $_POST['publisher']);
+            $bookgenre = mysqli_real_escape_string($conn, $_POST['genre']);
+            $bookisbn = mysqli_real_escape_string($conn, $_POST['isbn']);
             $bookWholesale = mysqli_real_escape_string($conn, $_POST['wholesale']);
             $bookRetail = mysqli_real_escape_string($conn, $_POST['retail']);
-            $bookQuantity = mysqli_real_escape_string($conn, $_POST['quantity']);
         
 
             //sql insert
@@ -85,19 +86,24 @@
             <input type="text" class="form-control form-control-lg" name="publisher" placeholder="Publisher">
             </div>
             <div class="form-group col-md-6 mt-5">
-            <input type="text" class="form-control form-control-lg" name="wholesale" placeholder="Wholesale">
+            <input type="text" class="form-control form-control-lg" name="genre" placeholder="Genre">
             </div>
         </div>
 
         <div class="form-row">
             <div class="form-group col-md-6 mt-5">
-            <input type="text" class="form-control form-control-lg" name="retail" placeholder="Retail">
+            <input type="text" class="form-control form-control-lg" name="wholesale" placeholder="Wholesale">
             </div>
             <div class="form-group col-md-6 mt-5">
-            <input type="text" class="form-control form-control-lg" name="quantity" placeholder="Quantity">
+            <input type="text" class="form-control form-control-lg" name="retail" placeholder="Retail">
             </div>
         </div>
         
+        <div class="form-row d-flex justify-content-center">
+            <div class="form-group col-md-6 mt-5">
+            <input type="text" class="form-control form-control-lg" name="isbn" placeholder="isbn">
+            </div>
+        </div>
         
         <div class="d-flex justify-content-center mt-5">
         <button type="submit" name="submit" class="btn btn-outline-dark">Add Book</button>
