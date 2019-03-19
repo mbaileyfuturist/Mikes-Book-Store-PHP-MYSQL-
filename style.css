@@ -1,19 +1,8 @@
-.body{
-    background-color:rgb(0, 119, 255);
+body{
+    background-color:rgb(0, 119, 255) !important;;
     font-family: 'Oswald', sans-serif;
 }
-.addbookbody{
-    background-color:rgb(0, 119, 255);
-    font-family: 'Oswald', sans-serif;
-}
-.addbook-form{
-    margin-left:10%;
-    margin-right:10%;
-}
-.removebookbody{
-    background-color:rgb(0, 119, 255);
-    font-family: 'Oswald', sans-serif;
-}
+
 h1{
     color:white;
 }

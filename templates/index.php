@@ -28,11 +28,11 @@ include('../config/db_connect.php');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Mikes Book Store</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="../style.css">
+    <link rel="stylesheet" type="text/css" media="screen" href=" ../style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 </head>
-<body class="body">
+<body>
 
     <!--Navigation bar-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -44,6 +44,9 @@ include('../config/db_connect.php');
         <ul class="navbar-nav">
         <li class="nav-item active">
             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="purchase.php">Make Purchase</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="addbook.php">Add Book</a>

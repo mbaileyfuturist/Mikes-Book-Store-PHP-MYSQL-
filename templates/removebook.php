@@ -49,7 +49,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="../style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
-<body class="removebookbody">
+<body>
 
         <!--Navigation bar-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -59,14 +59,17 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+            <li class="nav-item">
+                <a class="nav-link" href="index.php">Home</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="purchase.php">Make Purchase</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="addbook.php">Add Book</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="removebook.php">Remove Book</a>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Remove Book <span class="sr-only">(current)</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Edit Book</a>
