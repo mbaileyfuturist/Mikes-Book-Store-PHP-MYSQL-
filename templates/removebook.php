@@ -8,7 +8,7 @@
             $bookTitle = mysqli_real_escape_string($conn, $_POST['title']);
 
             //Query to fetch all books.
-            $sql = "SELECT * FROM books WHERE Title = '$bookTitle'";
+            $sql = "SELECT * FROM books WHERE title = '$bookTitle'";
     
             //Make query and get result.
             $result = mysqli_query($conn, $sql);
@@ -23,6 +23,21 @@
             mysqli_close($conn);
         }
 
+        //If remove button has been clicked.
+        if(isset($_POST['delete'])){
+            //Establish connection to database.
+            include('../config/db_connect.php');
+
+            $book_to_delete = mysqli_real_escape_string($conn, $_POST['book_to_delete']);
+
+            $sql = "DELETE FROM books WHERE title = '$book_to_delete'";
+
+            if(mysqli_query($conn, $sql)){
+                header('Location: index.php');
+            }else{
+                echo 'query error: ' . mysqli_error($conn);
+            }
+        }
 ?>
 <!DOCTYPE <!DOCTYPE html>
 <html>
@@ -106,11 +121,12 @@
                 echo        "</div>";
                 echo    "</div>";
                 
-                echo    "<form class=\"form-inline mt-5\" action=\"removebook.php\" method=\"GET\">";
+                echo    "<form class=\"form-inline mt-5\" action=\"removebook.php\" method=\"POST\">";
                 echo      "<div class=\"form-group mb-2\">";
-                echo         "<label class=\"text-white h4\">Are you sure wish to remove this book? </label>";
+                echo         "<label class=\"text-white h4\">Are you sure wish to remove {$book['title']}? </label>";
+                echo            "<input type=\"hidden\" name=\"book_to_delete\" value=\"{$book['title']}\">";
                 echo     "</div>";
-                echo        "<button type=\"submit\" class=\"btn btn-dark mb-2 ml-4\">Remove Books</button>";
+                echo        "<button name=\"delete\" type=\"submit\" class=\"btn btn-dark mb-2 ml-4\">Remove Books</button>";
                 echo        "</form>";
                 echo "</div>";
             }
