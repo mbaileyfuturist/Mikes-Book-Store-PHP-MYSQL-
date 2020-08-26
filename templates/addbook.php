@@ -16,7 +16,7 @@
         
 
             //sql insert
-            $sql = "INSERT INTO books(title, author, publisher, wholesale, retail, quantity) VALUES('$bookTitle', '$bookAuthor', '$bookPublisher', '$bookWholesale', '$bookRetail', '$bookQuantity')";
+            $sql = "INSERT INTO books(title, author, publisher, genre, isbn, wholesale, retail) VALUES('$bookTitle', '$bookAuthor', '$bookPublisher', '$bookgenre', '$bookisbn', '$bookWholesale', '$bookRetail')";
 
             //Save to db and check.
             if(mysqli_query($conn, $sql)){
